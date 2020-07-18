@@ -17,11 +17,12 @@ function revealLocation(event) {
 	
 	let myChance = new Chance(form.seed.value.toLowerCase());
 	let spy = myChance.integer({min: 1, max: parseInt(form.numPlayers.value)});
+	let numEspia = form.espia.value
 	
 	if (spy == form.player.value)
 		currentLocation.innerHTML = spyString;
 	else
-		currentLocation.innerHTML = myChance.pickone(locations);
+		currentLocation.innerHTML = numEspia;
 }
 
 let seed = document.getElementById("seed");
@@ -44,5 +45,5 @@ function selectInput(input) {
 }
 
 
-
+//currentLocation.innerHTML = myChance.pickone(locations);
 
