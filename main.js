@@ -54,7 +54,7 @@ function revealLocation(event) {
 		currentLocation.innerHTML = myChance.pickone(locations);
 	
 	currentEspia.innerHTML = espias;
-	currentContador.innerHTML = repe.length;
+	currentContador.innerHTML = cosa;
 }
 
 let seed = document.getElementById("seed");
