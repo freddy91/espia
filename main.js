@@ -31,7 +31,7 @@ function revealLocation(event) {
 		repe[i] = espias[i];
 		for(j=0; j<repe.length;j++){
 			if(espias[i] == repe[j]){
-				flagR = flagR + 1;
+				//flagR = flagR + 1;
 			}
 			
 		}
