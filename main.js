@@ -17,9 +17,10 @@ function revealLocation(event) {
 	
 	let myChance = new Chance(form.seed.value.toLowerCase());
 	let numEspia = form.espia.value;
-	var i,j;
+	var i;
+	var j;
 	let espias = [];
-	let repe = [];
+	let repe = new Array(numEspia);
 	let flagR = 0;
 	let spy;
 	
@@ -28,7 +29,7 @@ function revealLocation(event) {
 	
 		espias[i] = myChance.integer({min: 1, max: parseInt(form.numPlayers.value)});
 		repe[i] = espias[i];
-		for(j=0; j<espias.length;j++){
+		for(j=0; j<repe.length;j++){
 			if(espias[i] == repe[j]){
 				flagR++;
 			}
