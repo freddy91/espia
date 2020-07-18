@@ -21,7 +21,7 @@ function revealLocation(event) {
 	if (spy == form.player.value)
 		currentLocation.innerHTML = spyString;
 	else
-		currentLocation.innerHTML = spy;
+		currentLocation.innerHTML = myChance.pickone(locations);
 }
 
 let seed = document.getElementById("seed");
@@ -44,5 +44,5 @@ function selectInput(input) {
 }
 
 
-//currentLocation.innerHTML = myChance.pickone(locations);
+
 
