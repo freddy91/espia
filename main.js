@@ -31,6 +31,8 @@ function revealLocation(event) {
 		currentLocation.innerHTML = spyString;
 	else
 		currentLocation.innerHTML = espias[0];
+	
+	currentEspia.innerHTML = espias[1];
 }
 
 let seed = document.getElementById("seed");
@@ -54,5 +56,6 @@ function selectInput(input) {
 
 
 //currentLocation.innerHTML = myChance.pickone(locations);
+//currentLocation.innerHTML = spyString;
 //let spy = myChance.integer({min: 1, max: parseInt(form.numPlayers.value)});
 
