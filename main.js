@@ -22,7 +22,7 @@ function revealLocation(event) {
 	let espias = [];
 	let repe = new Array(numEspia);
 	var flagR = 0;
-	var cosa;
+	var cosa = 0;
 	let spy;
 	
 	do{
