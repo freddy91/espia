@@ -28,6 +28,7 @@ function revealLocation(event) {
 	if( numEspia > form.numPlayers.value) {
 		currentLocation.innerHTML ="Hay más espias que jugadores";
 		currentPlay.innerHTML =form.numPlayers.value;
+		currentE.innerHTML =numEspia;
 	}else {
 	
 	do{
