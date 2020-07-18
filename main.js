@@ -26,6 +26,7 @@ function revealLocation(event) {
 	let spy;
 	
 	do{
+		cosa = 0;
 		for(i=0;i<numEspia;i++){
 	
 		espias[i] = myChance.integer({min: 1, max: parseInt(form.numPlayers.value)});
@@ -40,8 +41,8 @@ function revealLocation(event) {
 		
 	}
 		
-	if (cosa != 0)
-		cosa = 0;
+	
+		
 		
 		
 	}while (cosa != 0);
