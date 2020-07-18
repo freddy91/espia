@@ -18,19 +18,20 @@ function revealLocation(event) {
 	let myChance = new Chance(form.seed.value.toLowerCase());
 	let numEspia = form.espia.value;
 	var i;
-	let espias = [];
+	let espias = new Array(numEspia);
+	espias.fill(0);
 	let spy;
 	
-	for(i=0;i<numEspia;i++){
+	/*for(i=0;i<numEspia;i++){
 	
 		espias[i] = myChance.integer({min: 1, max: parseInt(form.numPlayers.value)});
 		
-	}
+	}*/
 	
 	if (espias[0] == form.player.value)
 		currentLocation.innerHTML = spyString;
 	else
-		currentLocation.innerHTML = espias[0];
+		currentLocation.innerHTML = myChance.pickone(locations);
 	
 	currentEspia.innerHTML = espias;
 }
