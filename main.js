@@ -21,7 +21,7 @@ function revealLocation(event) {
 	var j;
 	let espias = [];
 	let repe = new Array(numEspia);
-	var flagR = 0;
+	var flagE = 0;
 	var cosa = 0;
 	let spy;
 	
@@ -47,9 +47,12 @@ function revealLocation(event) {
 		
 	}while (cosa != 0);
 	
+	for( i = 0 ; i< numEspia ; i++){
+		if(espias[i] == form.player.value)
+			flagE = 1;
+	}
 	
-	
-	if (espias[0] == form.player.value)
+	if flagE == 1)
 		currentLocation.innerHTML = spyString;
 	else
 		currentLocation.innerHTML = myChance.pickone(locations);
