@@ -29,7 +29,7 @@ function revealLocation(event) {
 	let spy;
 	
 		
-	if ( numEspia >  parseInt(form.numPlayers.value) ) {
+	if ( numEspia >=  parseInt(form.numPlayers.value) ) {
 		currentLocation.innerHTML = error;
 	}else{
 	
