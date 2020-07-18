@@ -29,12 +29,12 @@ function revealLocation(event) {
 	
 		espias[i] = myChance.integer({min: 1, max: parseInt(form.numPlayers.value)});
 		repe[i] = espias[i];
-		/*for(j=0; j<repe.length;j++){
-			if(espias[i] == repe[j]){
+		for(j=0; j<repe.length;j++){
+			/*if(espias[i] == repe[j]){
 				flagR = flagR + 1;
-			}
+			}*/
 			
-		}*/
+		}
 		
 	}
 		
