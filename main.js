@@ -17,6 +17,7 @@ function revealLocation(event) {
 	
 	let myChance = new Chance(form.seed.value.toLowerCase());
 	let numEspia = form.espia.value;
+	let numPlay = form.numPlayers.value;
 	var i;
 	var j;
 	let espias = [];
@@ -25,7 +26,7 @@ function revealLocation(event) {
 	var cosa = 0;
 	let spy;
 	
-	if( numEspia > form.numPlayers.value) {
+	if( numEspia > numPlay) {
 		currentLocation.innerHTML ="Hay más espias que jugadores";
 		currentPlay.innerHTML =form.numPlayers.value;
 		currentE.innerHTML =numEspia;
