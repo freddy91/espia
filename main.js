@@ -32,7 +32,7 @@ function revealLocation(event) {
 	else
 		currentLocation.innerHTML = espias[0];
 	
-	currentEspia.innerHTML = espias[1];
+	currentEspia.innerHTML = espias;
 }
 
 let seed = document.getElementById("seed");
