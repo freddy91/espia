@@ -52,7 +52,7 @@ function revealLocation(event) {
 			flagE = 1;
 	}
 	
-	if flagE == 1)
+	if (flagE == 1)
 		currentLocation.innerHTML = spyString;
 	else
 		currentLocation.innerHTML = myChance.pickone(locations);
