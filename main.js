@@ -17,20 +17,30 @@ function revealLocation(event) {
 	
 	let myChance = new Chance(form.seed.value.toLowerCase());
 	let numEspia = form.espia.value;
-	var i;
-	let espias = new Array(numEspia);
-	espias.fill(0);
+	var i,j;
+	let espias = [];
+	let repe = [];
+	let flagR = 0;
 	let spy;
 	
-	for(i=0;i<espias.length;i++){
-		espias[i] = 0	
-	}
-	
-	/*for(i=0;i<numEspia;i++){
+	do{
+		for(i=0;i<numEspia;i++){
 	
 		espias[i] = myChance.integer({min: 1, max: parseInt(form.numPlayers.value)});
+		repe[i] = espias[i];
+		for(j=0; j<espias.length;j++){
+			if(espias[i] == repe[j]){
+				flagR++;
+			}
+			
+		}
 		
-	}*/
+	}
+		
+		
+	}while (flagR != 0);
+	
+	
 	
 	if (espias[0] == form.player.value)
 		currentLocation.innerHTML = spyString;
