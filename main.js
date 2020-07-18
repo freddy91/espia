@@ -27,6 +27,10 @@ function revealLocation(event) {
 	let spy;
 	
 		
+	if( numEspias >= form.numPlayers.value){
+		  alert("Las dos claves son iguales...\nRealizaríamos las acciones del caso positivo")
+	}else{
+	
 	do{
 		cosa = 0;
 		for(i=0;i<numEspia;i++){
@@ -57,7 +61,7 @@ function revealLocation(event) {
 	else
 		currentLocation.innerHTML = myChance.pickone(locations);
 		
-	
+	}
 		
 }
 
