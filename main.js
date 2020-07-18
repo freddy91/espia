@@ -29,9 +29,9 @@ function revealLocation(event) {
 	let spy;
 	
 		
-	if( numEspias >= form.numPlayers.value){
+/*	if( numEspias >= form.numPlayers.value){
 		 currentLocation.innerHTML =error;
-	}else{
+	}else{*/
 	
 	do{
 		cosa = 0;
@@ -63,7 +63,7 @@ function revealLocation(event) {
 	else
 		currentLocation.innerHTML = myChance.pickone(locations);
 		
-	}
+	//}
 		
 }
 
