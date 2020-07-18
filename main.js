@@ -43,10 +43,6 @@ function selectInput(input) {
 	}, 0);
 }
 
-let locationList = document.getElementById("locationList");
 
-for (let location of chance.shuffle(locations)) {
-	let li = document.createElement("li");
-	li.textContent = location;
-	locationList.appendChild(li);
-}
+
+
