@@ -25,6 +25,10 @@ function revealLocation(event) {
 	var cosa = 0;
 	let spy;
 	
+	if( numEspia > form.numPlayers.value) {
+		currentLocation.innerHTML ="Hay más espias que jugadores";
+	}else {
+	
 	do{
 		cosa = 0;
 		for(i=0;i<numEspia;i++){
@@ -56,9 +60,10 @@ function revealLocation(event) {
 		currentLocation.innerHTML = spyString;
 	else
 		currentLocation.innerHTML = myChance.pickone(locations);
+		
+	}
 	
-	currentEspia.innerHTML = espias;
-	currentContador.innerHTML = cosa;
+	
 }
 
 let seed = document.getElementById("seed");
