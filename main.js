@@ -40,6 +40,9 @@ function revealLocation(event) {
 		
 	}
 		
+	if (cosa != 0)
+		cosa = 0;
+		
 		
 	}while (flagR != 0);
 	
