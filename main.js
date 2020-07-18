@@ -22,6 +22,7 @@ function revealLocation(event) {
 	let espias = [];
 	let repe = new Array(numEspia);
 	var flagR = 0;
+	var cosa;
 	let spy;
 	
 	do{
@@ -32,6 +33,7 @@ function revealLocation(event) {
 		for(j=0; j<repe.length;j++){
 			if(espias[i] == repe[j]){
 				//flagR = flagR + 1;
+				cosa = 6;
 			}
 			
 		}
@@ -48,7 +50,7 @@ function revealLocation(event) {
 	else
 		currentLocation.innerHTML = myChance.pickone(locations);
 	
-	currentEspia.innerHTML = espias;
+	currentEspia.innerHTML = cosa;
 }
 
 let seed = document.getElementById("seed");
