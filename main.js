@@ -10,6 +10,7 @@ let currentLocation = document.getElementById("currentLocation");
 
 function clearCurrentLocation() {
 	currentLocation.innerHTML = '';
+	currentEmpezar.innerHTML = '';
 }
 
 let form = document.querySelector('form');
