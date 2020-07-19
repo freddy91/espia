@@ -64,9 +64,11 @@ function revealLocation(event) {
 	else
 		currentLocation.innerHTML =  myChance.pickone(locations);
 		
+	currentEmpezar.innetHTML = empezar;
+		
 	}
 	
-	currentEmpezar.innetHTML = empezar
+	
 		
 }
 
