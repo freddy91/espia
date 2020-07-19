@@ -62,10 +62,10 @@ function revealLocation(event) {
 	if (flagE == 1){
 		currentLocation.innerHTML = spyString;
 	}else{
-		currentLocation.innerHTML = empezar;
+		currentLocation.innerHTML = myChance.pickone(locations);
 	}
 		
-	currentEmpezar.innetHTML ="HOLA";
+	currentEmpezar.innerHTML = empezar;
 		
 	}
 		
