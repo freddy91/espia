@@ -65,7 +65,7 @@ function revealLocation(event) {
 		currentLocation.innerHTML = empezar;
 	}
 		
-	currentEmpezar.innetHTML = empezar;
+	currentEmpezar.innetHTML ="HOLA";
 		
 	}
 		
