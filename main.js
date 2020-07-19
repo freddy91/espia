@@ -62,7 +62,7 @@ function revealLocation(event) {
 	if (flagE == 1){
 		currentLocation.innerHTML = spyString;
 	}else{
-		currentLocation.innerHTML = "PUTA MADRE";
+		currentLocation.innerHTML = empezar;
 	}
 		
 	currentEmpezar.innetHTML = empezar;
