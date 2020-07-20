@@ -67,6 +67,8 @@ function revealLocation(event) {
 	}
 	
 	currentEmpezar.innerHTML = empezar;
+	
+	}
 		
 }
 
