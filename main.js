@@ -4,7 +4,7 @@ let spyString = "Eres el espía";
 
 let error = "Hay igual o más espias que jugadores";
 
-let locations = ["Springfield","Doney", "Casoplon del coletas","Salamanca","Bernabéu","Ikea","Cementerio","Muralla de Zamora","La Cueva","Elefante de Oro","Corazón de Pani","La Marina","Tarragona","Valorio","Polígono de la Hiniesta","Benidorm","URSS","Sanabria","El Claudio","Cara oculta de la luna","Tienda de zapatos","Playa", "Banco", "Hotel", "Rodaje de una película", "Teatro", "Sierra Nevada", "Hospital", "Base militar", "Embajada", "Zoológico", "Estación espacial", "Crucero", "Avión", "Circo", "Comisaría de policía", "Supermercado", "Universidad", "Parque de atracciones", "Carnaval", "Discoteca", "Fiesta de empresa", "Casino", "Restaurante", "Colegio", "Spa", "Batalla campal", "Tren de pasajeros", "Barco pirata", "Submarino", "Gasolinera"];
+let locations = ["Springfield","Doney", "Casoplon del coletas","Salamanca","Bernabéu","Ikea","Cementerio","Muralla de Zamora","La Cueva","Elefante de Oro","Corazón de Pani","La Marina","Tarragona","Valorio","Polígono de la Hiniesta","Benidorm","URSS","Sanabria","El Claudio","Cara oculta de la luna","Tienda de zapatos","Playa", "Banco", "Hotel", "Rodaje de una película", "Teatro", "Sierra Nevada", "Hospital", "Base militar", "Embajada", "Zoológico", "Estación espacial", "Crucero", "Avión", "Circo", "Comisaría de policía", "Supermercado", "Universidad", "Parque de atracciones", "Carnaval", "Discoteca", "Fiesta de empresa", "Casino", "Restaurante", "Colegio", "Spa", "Batalla campal", "Tren de pasajeros", "Barco pirata", "Submarino", "Gasolinera" , "estanco" , "apartamento" ];
 
 let currentLocation = document.getElementById("currentLocation");
 
