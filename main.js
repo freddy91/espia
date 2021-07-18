@@ -38,13 +38,16 @@ wordForm.addEventListener('submit' , async (e) =>{
 
 resetDB.addEventListener('submit' , async (e) =>{
 	e.preventDefault();
-	console.log("Reseteando");
-	await db.collection('words').get().then(querySnapshot => {
-    	querySnapshot.docs.forEach(snapshot => {
-        	snapshot.ref.delete();
-    	})
-	})
+	const pass = resetDB['pass'].value;
+	if(pass == "123456789"){
+		await db.collection('words').get().then(querySnapshot => {
+    		querySnapshot.docs.forEach(snapshot => {
+        		snapshot.ref.delete();
+    		})
+		})	
+	}
 
+	resetDB.reset();
 	//window.location.reload();
 })
 
