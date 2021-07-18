@@ -1,10 +1,54 @@
 "use strict";
 //let locations = ["Playa", "Banco", "Hotel", "Rodaje de una película", "Teatro", "Sierra Nevada", "Hospital", "Base militar", "Embajada", "Zoológico", "Estación espacial", "Crucero", "Avión", "Circo", "Comisaría de policía", "Supermercado", "Universidad", "Parque de atracciones", "Carnaval", "Discoteca", "Fiesta de empresa", "Casino", "Restaurante", "Colegio", "Spa", "Batalla campal", "Tren de pasajeros", "Barco pirata", "Submarino", "Gasolinera"];
 let spyString = "Eres el espía";
+const db = firebase.firestore();
+
+var prueba = [];
+
+let locations = [];
 
 let error = "Hay igual o más espias que jugadores";
 
-let locations = ["Springfield","Doney", "Casoplon del coletas","Salamanca","Bernabéu","Ikea","Cementerio","Muralla de Zamora","La Cueva","Elefante de Oro","Corazón de Pani","La Marina","Tarragona","Valorio","Polígono de la Hiniesta","Benidorm","URSS","Sanabria","El Claudio","Cara oculta de la luna","Tienda de zapatos","Playa", "Banco", "Hotel", "Rodaje de una película", "Teatro", "Sierra Nevada", "Hospital", "Base militar", "Embajada", "Zoológico", "Estación espacial", "Crucero", "Avión", "Circo", "Comisaría de policía", "Supermercado", "Universidad", "Parque de atracciones", "Carnaval", "Discoteca", "Fiesta de empresa", "Casino", "Restaurante", "Colegio", "Spa", "Batalla campal", "Tren de pasajeros", "Barco pirata", "Submarino", "Gasolinera" , "estanco" , "apartamento" ];
+const wordForm = document.getElementById('word-form');
+const resetDB = document.getElementById('reset');
+
+const getTasks = () => db.collection('words').get();
+
+window.addEventListener('DOMContentLoaded' , async (e) =>{
+	const querySnapshot = await getTasks();
+	querySnapshot.forEach(doc =>{
+		locations.push(doc.data().word);
+	})
+
+	//console.log(locations);
+})
+
+
+wordForm.addEventListener('submit' , async (e) =>{
+	e.preventDefault();
+	const word = wordForm['word'].value;
+	if(word != ""){
+		await db.collection('words').doc().set({
+			word 
+		})
+	}
+
+	wordForm.reset();
+})
+
+resetDB.addEventListener('submit' , async (e) =>{
+	e.preventDefault();
+	console.log("Reseteando");
+	await db.collection('words').get().then(querySnapshot => {
+    	querySnapshot.docs.forEach(snapshot => {
+        	snapshot.ref.delete();
+    	})
+	})
+
+	//window.location.reload();
+})
+
+//let locations = ["Springfield","Doney", "Casoplon del coletas","Salamanca","Bernabéu","Ikea","Cementerio","Muralla de Zamora","La Cueva","Elefante de Oro","Corazón de Pani","La Marina","Tarragona","Valorio","Polígono de la Hiniesta","Benidorm","URSS","Sanabria","El Claudio","Cara oculta de la luna","Tienda de zapatos","Playa", "Banco", "Hotel", "Rodaje de una película", "Teatro", "Sierra Nevada", "Hospital", "Base militar", "Embajada", "Zoológico", "Estación espacial", "Crucero", "Avión", "Circo", "Comisaría de policía", "Supermercado", "Universidad", "Parque de atracciones", "Carnaval", "Discoteca", "Fiesta de empresa", "Casino", "Restaurante", "Colegio", "Spa", "Batalla campal", "Tren de pasajeros", "Barco pirata", "Submarino", "Gasolinera" , "estanco" , "apartamento" ];
 
 let currentLocation = document.getElementById("currentLocation");
 
@@ -30,8 +74,9 @@ function revealLocation(event) {
 	let spy;
 	let empezar = myChance.integer({min: 1, max: parseInt(form.numPlayers.value)});;
 	
-		
-	if ( numEspia >=  parseInt(form.numPlayers.value) ) {
+	if(locations.length == 0){
+		currentLocation.innerHTML = "No hay ninguna palabra en la base de datos";
+	}else if ( numEspia >=  parseInt(form.numPlayers.value) ) {
 		currentLocation.innerHTML = error;
 	}else{
 	
