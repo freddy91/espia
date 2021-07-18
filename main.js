@@ -9,10 +9,15 @@ let locations = [];
 
 let error = "Hay igual o más espias que jugadores";
 
+
 const wordForm = document.getElementById('word-form');
 const resetDB = document.getElementById('reset');
 
 const getTasks = () => db.collection('words').get();
+
+const removeAccents = (str) => {
+  return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+} 
 
 window.addEventListener('DOMContentLoaded' , async (e) =>{
 	const querySnapshot = await getTasks();
@@ -65,7 +70,7 @@ let form = document.querySelector('form');
 function revealLocation(event) {
 	event.preventDefault();
 	
-	let myChance = new Chance(form.seed.value.toLowerCase());
+	let myChance;
 	let numEspia = form.espia.value;
 	let numPlay = form.numPlayers.value;
 	var i;
@@ -75,7 +80,9 @@ function revealLocation(event) {
 	var flagE = 0;
 	var cosa = 0;
 	let spy;
-	let empezar = myChance.integer({min: 1, max: parseInt(form.numPlayers.value)});;
+	let empezar;
+
+	
 	
 	if(locations.length == 0){
 		currentLocation.innerHTML = "No hay ninguna palabra en la base de datos";
@@ -85,6 +92,12 @@ function revealLocation(event) {
 	
 	do{
 		cosa = 0;
+		var inputSeed = form.seed.value.toLowerCase();
+		inputSeed = removeAccents(inputSeed);
+		inputSeed = inputSeed.trim();
+
+		myChance = new Chance(inputSeed);
+		empezar = myChance.integer({min: 1, max: parseInt(form.numPlayers.value)});
 		for(i=0;i<numEspia;i++){
 	
 		espias[i] = myChance.integer({min: 1, max: parseInt(form.numPlayers.value)});
@@ -123,7 +136,9 @@ function revealLocation(event) {
 let seed = document.getElementById("seed");
 
 function generateSeed() {
-	let myChance = seed.value && new Chance(seed.value.toLowerCase()) || chance;
+
+
+	let myChance = seed.value && new Chance(seed.value.toLowerCase())  || chance;
 	seed.value = myChance.word({syllables: 2});
 	form.oninput();
 }
