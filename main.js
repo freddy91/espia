@@ -12,6 +12,7 @@ let error = "Hay igual o más espias que jugadores";
 
 const wordForm = document.getElementById('word-form');
 const resetDB = document.getElementById('reset');
+const total = document.getElementById('total');
 
 const getTasks = () => db.collection('words').get();
 
@@ -24,8 +25,8 @@ window.addEventListener('DOMContentLoaded' , async (e) =>{
 	querySnapshot.forEach(doc =>{
 		locations.push(doc.data().word);
 	})
-
-	//console.log(locations);
+	total.innerHTML = locations.length;
+	//console.log(locations.length);
 })
 
 
